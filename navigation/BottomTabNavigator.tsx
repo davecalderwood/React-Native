@@ -7,7 +7,8 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import ImageScreen from '../screens/ImageScreen';
+import { BottomTabParamList, TabOneParamList, TabTwoParamList, ImageParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -28,6 +29,13 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="ImageTab"
+        component={ImageNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -69,5 +77,19 @@ function TabTwoNavigator() {
         options={{ headerTitle: 'Tab Two Title' }}
       />
     </TabTwoStack.Navigator>
+  );
+}
+
+const ImageStack = createStackNavigator<ImageParamList>();
+
+function ImageNavigator() {
+  return (
+    <ImageStack.Navigator>
+      <ImageStack.Screen
+        name="ImageScreen"
+        component={ImageScreen}
+        options={{ headerTitle: 'Image Title' }}
+      />
+    </ImageStack.Navigator>
   );
 }
