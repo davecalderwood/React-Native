@@ -2,13 +2,16 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../components/Themed';
+import ImageDetail from '../componentsList/ImageDetail';
 
 export default function ImageScreen() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Image</Text>
             <View style={styles.separator}/>
-            <Text>Hello</Text>
+            <ImageDetail title="Forest" image={require('../assets/images/forest.jpg')} />
+            <ImageDetail title="Beach" image={require('../assets/images/beach.jpg')} />
+            <ImageDetail title="Mountain" image={require('../assets/images/mountain.jpg')} />
         </View>
     );
 }
