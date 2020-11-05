@@ -8,7 +8,7 @@ export default function ImageScreen() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Image</Text>
-            <View style={styles.separator}/>
+            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
             <ImageDetail title="Forest" image={require('../assets/images/forest.jpg')} />
             <ImageDetail title="Beach" image={require('../assets/images/beach.jpg')} />
             <ImageDetail title="Mountain" image={require('../assets/images/mountain.jpg')} />
